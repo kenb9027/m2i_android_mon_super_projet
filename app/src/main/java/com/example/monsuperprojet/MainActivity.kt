@@ -21,6 +21,16 @@ class MainActivity : AppCompatActivity() {
         val buttonMusic = findViewById<Button>(R.id.my_music_btn)
         buttonMusic.setOnClickListener {
             val intentMusic = Intent(this, MusicActivity::class.java )
+
+            //ADD ACTION
+            intentMusic.action = Intent.ACTION_VIEW
+            //ADD CATEGORY
+            intentMusic.addCategory("favorites")
+            //ADD EXTRA
+            intentMusic.putExtra("band" , "PinkFloyd" )
+            intentMusic.putExtra("title" , "The_Great_Gig_in_the_Sky")
+
+
             startActivity(intentMusic)
         }
     }
