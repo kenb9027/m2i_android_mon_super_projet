@@ -10,6 +10,9 @@
     <color name="white_broken">#EEEEEE</color>
     <color name="blue">#1B6BAA</color>
     <color name="blue_dark">#0A45BA</color>
+    <color name="red">#CC2013</color>
+    <color name="red_dark">#711109</color>
+
 
 
 </resources>

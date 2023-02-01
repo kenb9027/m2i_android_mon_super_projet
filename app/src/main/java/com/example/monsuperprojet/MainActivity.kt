@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,20 +19,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         //btn Music
+        var music = Music("Pink Floyd" , "The Great Gig in the Sky")
+        var musicTwo = Music("Queen" , "Don't Stop me now")
         val buttonMusic = findViewById<Button>(R.id.my_music_btn)
         buttonMusic.setOnClickListener {
             val intentMusic = Intent(this, MusicActivity::class.java )
-
-            //ADD ACTION
-            intentMusic.action = Intent.ACTION_VIEW
-            //ADD CATEGORY
-            intentMusic.addCategory("favorites")
-            //ADD EXTRA
-            intentMusic.putExtra("band" , "PinkFloyd" )
-            intentMusic.putExtra("title" , "The_Great_Gig_in_the_Sky")
+            intentMusic.putExtra("music" , music)
+            intentMusic.putExtra("musicTwo" , musicTwo)
 
 
             startActivity(intentMusic)
+        }
+
+        //btn CGV
+        val buttonCgv = findViewById<Button>(R.id.cgv_btn)
+        buttonCgv.setOnClickListener {
+            val intentCgv = Intent(this, CgvActivity::class.java )
+            startActivity(intentCgv)
         }
     }
 }

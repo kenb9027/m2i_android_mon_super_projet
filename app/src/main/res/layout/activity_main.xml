@@ -1,39 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/relative_layout"
+    >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="Préférence"
+        android:id="@+id/main_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ma_presentation"
-        android:id="@+id/my_presentation_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:textSize="50dp"
         android:backgroundTint="@color/white_broken"
-        android:textColor="@color/black"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profil"
+            android:id="@+id/my_presentation_btn"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white_broken"
+            android:layout_weight="1"
+            />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ma_musique"
-        android:id="@+id/my_music_btn"
-        android:backgroundTint="@color/blue"
-        android:textColor="@color/white_broken"
-        />
 
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Musique"
+            android:id="@+id/my_music_btn"
+            android:backgroundTint="@color/white_broken"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cgv"
+            android:id="@+id/cgv_btn"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/white_broken"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
